@@ -15,10 +15,11 @@ rem echo cpan -T %REQS%
 rem cpan -T %REQS%
 echo perl Makefile.PL
 perl Makefile.PL
-echo dmake
-dmake
-echo dmake test
-dmake test
+rem strawberry switched with 5.26 from dmake to gmake
+echo make
+perl -MConfig -e "exec $Config{make}"
+echo make test
+perl -MConfig -e "exec $Config{make}, 'test'"
 
 exit /b
 
