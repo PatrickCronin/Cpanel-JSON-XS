@@ -17,9 +17,9 @@ echo perl Makefile.PL
 perl Makefile.PL
 rem strawberry switched with 5.26 from dmake to gmake
 echo make
-perl -MConfig -e "exec $Config{make}" || exit /b 1
+perl -MConfig -e "exec $Config{make}" || exit 1
 echo make test
-perl -MConfig -e "exec $Config{make}, 'test'" || exit /b 1
+perl -MConfig -e "exec $Config{make}, 'test'" || exit 1
 
 exit /b
 
